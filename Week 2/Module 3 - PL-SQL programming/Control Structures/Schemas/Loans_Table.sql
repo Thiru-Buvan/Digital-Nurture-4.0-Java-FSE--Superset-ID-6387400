@@ -1,0 +1,13 @@
+CREATE TABLE Loans (
+    LoanID      NUMBER PRIMARY KEY,
+    CustomerID  NUMBER,
+    DueDate     DATE,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+INSERT INTO Loans VALUES (101, 1, SYSDATE + 10); 
+INSERT INTO Loans VALUES (102, 2, SYSDATE + 40); 
+INSERT INTO Loans VALUES (103, 3, SYSDATE + 5);  
+INSERT INTO Loans VALUES (104, 4, SYSDATE + 29); 
+
+COMMIT;
